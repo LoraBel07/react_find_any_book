@@ -2,15 +2,15 @@ import react, { useState } from "react";
 import Cards from "./Cards";
 import axios from "axios";
 
-function Main(){
-	const Main = () => {
-		const [mySearch, setMySearch] = useState('');
+const Main=()=> {	
+		const [search, setSearch] = useState('');
+		const [bookData, setData] = useState([]);
 		const searchBook = (evt) => {
-			if(evt.key==="Enter")
-			{
-				console.log("hello");
-			}
-		}
+			if(evt.key==="Enter") {
+				axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBQimsgTSUoPkTSt8n_xju34zj0ZqD2IWU')
+				.then(res=>setData(res.data.items))
+				.catch(err=>console.log(err))
+			}		
 	}
 	return(
 		<>
@@ -19,7 +19,7 @@ function Main(){
 				<h2>Find your Book</h2>
 				<div className="search">
 					<input type="text" placeholder="Enter Your Book Name . . ."
-					value={mySearch} onChange={setMySearch}
+					value={search} onChange={e=>setSearch(e.target.value)}
 					onKeyPress={searchBook}/>
 					<button><img src="./images/search.png" alt="search"/></button>
 
@@ -29,19 +29,9 @@ function Main(){
 		</div>
 
 		<div className="container">
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-			<Cards/>
-
+			{
+			<Cards book={bookData}/>
+			}
 		</div>
 
 

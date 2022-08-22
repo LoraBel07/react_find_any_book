@@ -77,11 +77,11 @@ html {
 	box-sizing: border-box;
 }
 .cards {
-	background-color: var(--secondary-color);
+	background-color: rgb(249, 237, 237);
 	border-radius: 1rem;
 	padding: 0.5rem;
 	margin-bottom: 10px;
-	box-shadow: 0 5px 5px rgb(249, 249, 109);
+	box-shadow: 0 5px 5px var(--secondary-color);
 	transition: .5s;
 	text-align: center;
 	position: relative;

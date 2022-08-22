@@ -6,7 +6,7 @@
 	font-family: 'Original Surfer', cursive;
 }
 :root {
-	--primary-color: rgb(187, 187, 151);
+	--primary-color: rgb(197, 183, 148);
 	--secondary-color: rgb(92, 58, 80);
 }
 body {
@@ -64,11 +64,11 @@ html {
 }
 .cards img {
 	width: 100%;
-	height: 190px;
+	height: 290px;
 	border-radius: 1rem 1rem 0 0;
 }
 .container {
-	width: 65%;
+	width: 75%;
 	margin: 0 auto;
 	margin-top: 25px;
 	display: grid;
@@ -81,10 +81,16 @@ html {
 	border-radius: 1rem;
 	padding: 0.5rem;
 	margin-bottom: 10px;
-	box-shadow: 0 5px 5px var(--secondary-color);
+	box-shadow: 0 5px 10px var(--secondary-color);
 	transition: .5s;
 	text-align: center;
 	position: relative;
+	height: 360px;
+}
+.cards:hover {
+	transform: scale(1.07);
+	background-color: rgb(248, 251, 251);
+	box-shadow: 3px 7px 12px var(--secondary-color);
 }
 .cards .bottom {
 	display: flex;
@@ -105,5 +111,73 @@ html {
 	font-weight: bold;
 	padding: 0.2rem;
 
+}
+.overlay {
+	min-height: 100vh;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(rgba(17, 17, 17, 0.2), rgba(54, 52, 52, 0.1));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.overlay-inner {
+	background: rgb(243, 230, 202);
+	width: 700px;
+	height: 550px;
+	padding: 1.5rem;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-size: 1.3rem;
+}
+.overlay-inner .close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	outline: none;
+	border: none;
+	font-size: 17px;
+	background-color: transparent;
+}
+.overlay-inner .inner-box {
+	margin-top: 30px;
+	display:flex;
+	justify-content: center;
+}
+.overlay-inner .inner-box img {
+	width: 170px;
+	margin-right: 40px;
+	height: 200px;
+}
+.overlay-inner .inner-box h3 {
+	margin-top: 10px;
+	color: rgb(40, 60, 40);
+	font-family: 'KoHo', sans-serif;
+}
+.overlay-inner .inner-box h4 {
+	color: rgb(54, 54, 79);
+	font-family: 'KoHo', sans-serif;
+	font-weight: bold;
+}
+.overlay-inner .inner-box button {
+	outline: none;
+	border: none;
+	width: 100px;
+	border-radius: 5px;
+	background-color: rgb(92, 58, 80);
+	color: white;
+	font-weight: bold;
+	padding: 0.3rem 0.5rem;
+}
+.overlay-inner .description {
+	margin-top: 2rem;
+	text-align: justify;
+	font-size: 13px;
+	font-family: 'KoHo', sans-serif;
 }
 

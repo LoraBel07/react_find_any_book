@@ -2,9 +2,9 @@ import react, { useState } from "react";
 import Cards from "./Cards";
 import axios from "axios";
 
-const Main=()=>{
+function Main(){
 	const Main = () => {
-		const [mySearch, setMySearch] = useState("");
+		const [mySearch, setMySearch] = useState('');
 		const searchBook = (evt) => {
 			if(evt.key==="Enter")
 			{
@@ -19,7 +19,7 @@ const Main=()=>{
 				<h2>Find your Book</h2>
 				<div className="search">
 					<input type="text" placeholder="Enter Your Book Name . . ."
-					value={mySearch} onChange={e=>setMySearch(e.target.value)}
+					value={mySearch} onChange={setMySearch}
 					onKeyPress={searchBook}/>
 					<button><img src="./images/search.png" alt="search"/></button>
 

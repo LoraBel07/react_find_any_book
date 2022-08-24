@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 
 const Cards = ({book}) => {
@@ -10,13 +10,13 @@ const Cards = ({book}) => {
 	return(
 		<>
 		{
-			book.map(( item )=>{
+			book.map(( item, index )=>{
 				let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
 				let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
 				let title = item.volumeInfo && item.volumeInfo.title;				
 				if(thumbnail !== undefined && amount !== undefined) {
 					return(
-						<>
+						<div key={index}>
 						<div className="cards" onClick={() => {setShow(true); setItem(item)}}>
 							<img src={thumbnail} alt="card"/>
 							<div className="bottom">
@@ -25,10 +25,10 @@ const Cards = ({book}) => {
 							</div>
 						</div>
 						<Modal show = {show} item = {bookItem} onClose = {()=> setShow(false)}/>
-						</>
+						</div>
 					)
 				}
-				
+				return null;
 			})
 		}
 		

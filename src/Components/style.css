@@ -180,4 +180,28 @@ html {
 	font-size: 13px;
 	font-family: 'KoHo', sans-serif;
 }
+@media all and (max-width: 550px){
+	h2{
+	font-size: 20px;
+	}
+	.imgbooks {
+		margin-top: 20px;
+		width: 350px;
+	}
+	.header {
+		width: 100%;
+		height: 285px;
+		justify-self: center;
+	}
+	.cards img {
+		width: 240px;
+		height: 300px;		
+	}
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
 
